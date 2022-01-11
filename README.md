@@ -7,7 +7,8 @@
 ## Usage example
 
 ## Release History
-
+2022-01-11 
+- router는 배포 방법이 다르다. * 잊지 말것!
 ## Meta
 
 park ji ho – [hemish902@tistory.com](https://heimish902@tistory.com) - frontend_web@kakao.com
