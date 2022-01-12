@@ -16,6 +16,7 @@
 - 이미지는 깃허브 절대주소로 저장해서 경로와 상관없이 정상 작동하도록 변경 
 - 메인페이지 section 추가 / footer 제작 
 - 꼼데가르송 상세페이지 제작(-ing)
+- 링크를 누르면 하트를 누를 수 없는 오류 수정
 ## Meta
 
 park ji ho – [hemish902@tistory.com](https://heimish902@tistory.com) - frontend_web@kakao.com
