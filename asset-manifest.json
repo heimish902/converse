@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.1edab2b8.css",
-    "main.js": "/static/js/main.d3c28ff4.js",
-    "index.html": "/index.html",
-    "main.1edab2b8.css.map": "/static/css/main.1edab2b8.css.map",
-    "main.d3c28ff4.js.map": "/static/js/main.d3c28ff4.js.map"
+    "main.css": "/converse/static/css/main.1edab2b8.css",
+    "main.js": "/converse/static/js/main.798f6f8b.js",
+    "index.html": "/converse/index.html",
+    "main.1edab2b8.css.map": "/converse/static/css/main.1edab2b8.css.map",
+    "main.798f6f8b.js.map": "/converse/static/js/main.798f6f8b.js.map"
   },
   "entrypoints": [
     "static/css/main.1edab2b8.css",
-    "static/js/main.d3c28ff4.js"
+    "static/js/main.798f6f8b.js"
   ]
 }
