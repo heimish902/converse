@@ -1,0 +1,25 @@
+/* body */
+.dark {
+  background-color: #000;
+
+  header {
+    border-bottom: 1px solid #444;
+    background-color: #000;
+  }
+
+  .logo {
+    background: url('https://heimish902.github.io/converse/images/logo_w.png') no-repeat center/cover;
+  }
+  nav {
+    a {
+      font-weight: 400;
+      color: #fff;
+    }
+    .left li:last-child a {
+      color: #fff;
+    }
+  }
+  .right button {
+    background-color: transparent;
+  }
+}
