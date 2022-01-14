@@ -1,4 +1,5 @@
 import './Dark.scss';
+import './Cart.scss';
 import './Detail.scss';
 import './App.scss';
 
@@ -8,6 +9,7 @@ import ChangeDark from './Runstart';
 import CommeDes from './CommeDes';
 import StartHike from './startHike';
 import Detail from './Detail';
+import Cart from './Cart';
 
 import { useState, useEffect } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
@@ -163,6 +165,10 @@ function App() {
             </Route>
           );
         })}
+
+        <Route path='/cart'>
+          <Cart />
+        </Route>
       </Switch>
       <footer>
         <div className='inner'>

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Detail({ a }) {
+  let state = useSelector((state) => state);
+
   return (
     <div className='container'>
       <div className='left'>
@@ -46,7 +50,7 @@ function Detail({ a }) {
         </div>
         <div className='buy'>
           <button>사이즈 가이드</button>
-          {a.quan !== 0 ? <Size /> : <SoldOut />}
+          {a.quan !== 0 ? <Size a={a} /> : <SoldOut />}
 
           <div className='sns'>
             <Link></Link>
@@ -59,10 +63,24 @@ function Detail({ a }) {
   );
 }
 
-function Size() {
+function Size({ a }) {
+  let dispatch = useDispatch();
+  let history = useHistory();
+
   return (
     <div>
-      <ul>
+      <ul
+        onClick={(e) => {
+          const ul = document.querySelector('.buy ul');
+          const link = ul.querySelectorAll('span');
+          let size = e.target.innerText;
+
+          link.forEach((list) => (list.style.backgroundColor = '#fff'));
+          a.size = size;
+          e.target.style.backgroundColor = '#ddd';
+          console.log({ a });
+        }}
+      >
         <li>
           <a href='#none'>
             <span>220</span>
@@ -167,12 +185,20 @@ function Size() {
         </button>
       </div>
       <div className='buyBtn'>
-        <Link className='btn ' to='/'>
+        <button
+          className='btn'
+          onClick={() => {
+            let input = document.querySelector('.count input').value;
+            dispatch({
+              type: 'AddCart',
+              payload: { id: a.id, title: a.title, price: a.price, size: a.size, color: a.color, quan: input },
+            });
+            history.push('/cart');
+          }}
+        >
           장바구니
-        </Link>
-        <Link className='btn ' to='/'>
-          바로구매
-        </Link>
+        </button>
+        <button className='btn'>바로구매</button>
         <Likes />
       </div>
     </div>
@@ -206,4 +232,5 @@ function Likes() {
     </button>
   );
 }
+
 export default Detail;
