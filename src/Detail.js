@@ -34,17 +34,17 @@ function Detail({ a }) {
             컬러 : <span>{a.color}</span>{' '}
           </p>
           <div className='thum'>
-            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/${a.id}`}>
-              <img src={`https://heimish902.github.io/converse/images/asset ${a.id}_thum.jpeg`} alt='' />
+            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/28`}>
+              <img src={`https://heimish902.github.io/converse/images/asset 28_thum.jpeg`} alt='' />
             </Link>
-            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/${a.id + 1}`}>
-              <img src={`https://heimish902.github.io/converse/images/asset ${a.id + 1}_thum.jpeg`} alt='' />
+            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/29`}>
+              <img src={`https://heimish902.github.io/converse/images/asset 29_thum.jpeg`} alt='' />
             </Link>
-            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/${a.id - 2}`}>
-              <img src={`https://heimish902.github.io/converse/images/asset ${a.id - 2}_thum.jpeg`} alt='' />
+            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/26`}>
+              <img src={`https://heimish902.github.io/converse/images/asset 26_thum.jpeg`} alt='' />
             </Link>
-            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/${a.id - 1}`}>
-              <img src={`https://heimish902.github.io/converse/images/asset ${a.id - 1}_thum.jpeg`} alt='' />
+            <Link to={`/컨버스X꼼데-가르송-플레이-척-70/27`}>
+              <img src={`https://heimish902.github.io/converse/images/asset 27_thum.jpeg`} alt='' />
             </Link>
           </div>
         </div>
@@ -52,11 +52,11 @@ function Detail({ a }) {
           <button>사이즈 가이드</button>
           {a.quan !== 0 ? <Size a={a} /> : <SoldOut />}
 
-          <div className='sns'>
+          {/* <div className='sns'>
             <Link></Link>
             <Link></Link>
             <Link></Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

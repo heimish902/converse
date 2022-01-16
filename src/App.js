@@ -80,7 +80,7 @@ function App() {
             <div className='right'>
               <ul>
                 <li>
-                  <Link to='/user'>
+                  <Link to='/'>
                     <span className='material-icons'>person_outline</span>
                   </Link>
                 </li>
@@ -90,12 +90,12 @@ function App() {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/like'>
+                  <Link to='/'>
                     <span className='material-icons'>favorite_outline</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to='/cscenter'>
+                  <Link to='/'>
                     <span className='material-icons'>help_outline</span>
                   </Link>
                 </li>
@@ -140,7 +140,7 @@ function App() {
             <section className='newItems'>
               <div className='title '>
                 <h2>Shop By Style</h2>
-                <Link to='/shoes'>
+                <Link to='/'>
                   <span className='material-icons'>east</span>신상품 보러가기
                 </Link>
               </div>
