@@ -187,3 +187,181 @@ input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* -------------------- mobile ------------------- */
+
+@media screen and (max-width: 768px) {
+  .container {
+    position: relative;
+    margin-top: 50px;
+    @include flex(column, center, center);
+    .left {
+      width: 100%;
+      margin-top: 70px;
+
+      img {
+        height: auto;
+      }
+    }
+    .right {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+
+      .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        padding: 15px;
+
+        h3 {
+          margin-bottom: 10px;
+          font-size: 0.9em;
+          font-weight: 600;
+          float: left;
+        }
+        p {
+          margin-bottom: 0;
+          font-size: 0.85em;
+        }
+      }
+    }
+    .price {
+      float: right;
+    }
+    .gender {
+      margin-bottom: 0;
+      clear: both;
+      color: rgb(110, 110, 110);
+    }
+    .desc,
+    .viewmore,
+    .rate {
+      display: none;
+    }
+
+    .select {
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+
+      p {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .thum {
+      width: 85%;
+      @include flex(row, center, space-between);
+      a {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ddd;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .buy {
+      padding: 20px 0;
+
+      > button {
+        display: block;
+        margin-left: auto;
+        text-decoration: underline;
+      }
+    }
+    ul {
+      @include flex(row, center, flex-start);
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 30px;
+    }
+    li {
+      width: 20%;
+      text-align: center;
+      border: 1px solid #ddd;
+
+      a {
+        display: block;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 15px 0;
+      }
+    }
+  }
+  .count {
+    @include flex(row, center, flex-start);
+    margin-top: 30px;
+    input {
+      width: 80px;
+      height: 50px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+      outline: none;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+    button:first-of-type {
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  .buyBtn {
+    @include flex(row, center, space-between);
+    width: 100%;
+    margin-top: 30px;
+
+    .btn {
+      display: block;
+      width: 43%;
+    }
+    .like {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #000;
+    }
+  }
+
+  .soldOut {
+    @include flex(row, center, space-between);
+    width: 100%;
+    margin-top: 30px;
+  }
+  .soldOutBtn {
+    width: 85%;
+    height: 50px;
+    border: 1px solid #000;
+  }
+  .like {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

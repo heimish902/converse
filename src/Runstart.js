@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 function ChangeDark() {
   useEffect(() => {
-    let dark = document.querySelector('body').classList.add('dark');
+    document.querySelector('body').classList.add('dark');
   });
 
   return (

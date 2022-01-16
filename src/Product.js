@@ -18,7 +18,6 @@ export let commedes = [
     desc: '아이코닉 하트 앤 아이 로고가 함께하는 시즈널 블루와 그레이 척 70',
     color: '블루쿼츠',
     quan: 1,
-    size: '',
   },
   {
     id: 28,

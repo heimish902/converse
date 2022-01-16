@@ -9,7 +9,7 @@ function CommeDes({ item }) {
         <img className='img2' src={`https://heimish902.github.io/converse/images/asset ${item.id}_hover.jpeg`} alt='' />
       </Link>
       <div className='text'>
-        <div className='top_left'>
+        <div className='top'>
           <span
             onClick={(e) => {
               if (e.target.innerText == 'favorite_outline') {
@@ -22,8 +22,6 @@ function CommeDes({ item }) {
           >
             favorite_outline
           </span>
-        </div>
-        <div className='top_right'>
           <p>{item.option}</p>
         </div>
         <div className='bottom'>

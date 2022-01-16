@@ -3,6 +3,7 @@ import './Cart.scss';
 import './Detail.scss';
 import './App.scss';
 
+import productType from './list';
 import { commedes, thum, startHike } from './Product';
 import Items from './Items';
 import ChangeDark from './Runstart';
@@ -11,10 +12,14 @@ import StartHike from './startHike';
 import Detail from './Detail';
 import Cart from './Cart';
 
-import { useState, useEffect } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
+  let [isModal, setIsModal] = useState(false);
+  let [isSidebar, setIsSideber] = useState(false);
+  let [types, setTypes] = useState();
+
   return (
     <div className='App'>
       <header>
@@ -30,22 +35,45 @@ function App() {
             </Link>
           </h1>
           <nav>
+            <div
+              className='mobile_btn'
+              onClick={() => {
+                showMenu();
+                setIsSideber(true);
+                document.querySelector('.left').style.display = 'block';
+              }}
+            >
+              <span className='material-icons'>menu</span>
+            </div>
             <div className='left'>
-              <ul>
+              {isSidebar === true ? <MobileSide setIsSideber={setIsSideber} setIsModal={setIsModal} /> : null}
+              <ul
+                onClick={(e) => {
+                  let span = document.querySelectorAll('.left span');
+                  span.forEach((el) => {
+                    el.style.borderBottom = 'none';
+                  });
+                  let name = e.target.dataset.type;
+                  e.target.style.borderBottom = '3px solid';
+                  setTypes(productType[name]);
+                  console.log(types);
+                  setIsModal(true);
+                }}
+              >
                 <li>
-                  <Link to='/shoes'>신발</Link>
+                  <span data-type='shoes'>신발</span>
                 </li>
                 <li>
-                  <Link to='/cloth'>의류</Link>
+                  <span data-type='cloth'>의류</span>
                 </li>
                 <li>
-                  <Link to='/kids'>아동</Link>
+                  <span>아동</span>
                 </li>
                 <li>
-                  <Link to='/launch'>런칭캘린더</Link>
+                  <span>런칭캘린더</span>
                 </li>
                 <li>
-                  <Link to='/sale'>SALE</Link>
+                  <span>SALE</span>
                 </li>
               </ul>
             </div>
@@ -77,6 +105,7 @@ function App() {
               </button>
             </div>
           </nav>
+          {isModal === true ? <Modal types={types} setIsModal={setIsModal} /> : null}
         </div>
       </header>
       <Switch>
@@ -93,11 +122,11 @@ function App() {
                     <br />
                     하트 앤 아이 로고가 함께 하는 시즈널 컬러 척 70을 만나보세요.
                   </p>
-                  <Link to='/컨버스X꼼데-가르송-플레이-척-70/28' class='btn'>
-                    구매하기
-                  </Link>
                 </div>
                 <img src='https://heimish902.github.io/converse/images/asset 25.jpeg' alt='' />
+                <Link to='/컨버스X꼼데-가르송-플레이-척-70/28' class='btn'>
+                  구매하기
+                </Link>
               </div>
               <div className='right'>
                 {commedes.map((item, index) => {
@@ -123,9 +152,11 @@ function App() {
             </section>
 
             <section className='banner'>
-              <h2 className='hidden'>Run Star Motion Ox</h2>
-              <img src='https://www.converse.co.kr/image/banner/16406673000.jpg' alt='' />
-              <img src='https://www.converse.co.kr/image/banner/16406673420.jpg' alt='' />
+              <div className='img_box'>
+                <h2 className='hidden'>Run Star Motion Ox</h2>
+                <img src='https://www.converse.co.kr/image/banner/16406673000.jpg' alt='' />
+                <img src='https://www.converse.co.kr/image/banner/16406673420.jpg' alt='' />
+              </div>
               <Link to='/runstartmotionox' class='btn'>
                 더 알아보기
               </Link>
@@ -135,13 +166,13 @@ function App() {
               <div className='left'>
                 <div className='text'>
                   <p>
-                    새롭게 돌아온 두 패션 아이콘의 콜라보레이션.
+                    자연에서 영감을 받은 색조에 프리미엄 쿠셔닝으로 더욱 편안하면서도,
                     <br />
-                    하트 앤 아이 로고가 함께 하는 시즈널 컬러 척 70을 만나보세요.
+                    절정의 스타일에 도달한 런스타 하이크
                   </p>
-                  <button class='btn'>구매하기</button>
                 </div>
                 <img src='https://heimish902.github.io/converse/images/asset 40.jpeg' alt='' />
+                <button class='btn'>더 알아보기</button>
               </div>
               <div className='right'>
                 {startHike.map((item, index) => {
@@ -187,20 +218,93 @@ function App() {
               <address>주소 서울특별시 강남구 테헤란로 152(역삼동) 강남파이낸스센터 32층</address>
             </div>
             <div>
-              <span>고객상담팀 : 080-987-0182(싱담시간 월-금:AM 09:00 - PM 05:30, 주말/공휴일 휴무)</span>
-              <span>
-                <Link>converskorea@converse.co.kr</Link>
-                (24시간 접수 가능)
-              </span>
+              <p>
+                고객상담팀 : 080-987-0182<span>(싱담시간 월-금:AM 09:00 - PM 05:30, 주말/공휴일 휴무)</span>
+                <span>
+                  <Link>converskorea@converse.co.kr</Link>
+                  (24시간 접수 가능)
+                </span>
+              </p>
             </div>
 
             <div className='copyright'>2020 Converse Korea LLC. All Rights Reserved.</div>
           </div>
-          <div className='right'></div>
         </div>
       </footer>
     </div>
   );
 }
 
+function Modal({ types, setIsModal }) {
+  return (
+    <div className='modal'>
+      <span
+        className='material-icons close'
+        onClick={() => {
+          setIsModal(false);
+          let span = document.querySelectorAll('.left span');
+          span.forEach((el) => {
+            el.style.borderBottom = 'none';
+          });
+        }}
+      >
+        close
+      </span>
+      <div className='side_bar'>
+        <ul>
+          {types.map((a) => {
+            return (
+              <li>
+                <Link
+                  to={`/shoes/${a}`}
+                  onClick={() => {
+                    setIsModal(false);
+                    let span = document.querySelectorAll('.left span');
+                    span.forEach((el) => {
+                      el.style.borderBottom = 'none';
+                    });
+                  }}
+                >
+                  {a}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function showMenu() {
+  const menu = document.querySelector('nav');
+
+  if (menu.className === '') {
+    menu.className += 'responsive';
+  } else {
+    menu.className = '';
+  }
+}
+
+function MobileSide({ setIsSideber, setIsModal }) {
+  return (
+    <div className='top mobile'>
+      <div className='mobile_logo'>
+        <span className='hidden'>logo</span>
+      </div>
+      <div className='close'>
+        <span
+          className='material-icons'
+          onClick={() => {
+            setIsSideber(false);
+            document.querySelector('.left').style.display = 'none';
+            setIsModal(false);
+          }}
+        >
+          close
+        </span>
+      </div>
+    </div>
+  );
+}
 export default App;

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Detail({ a }) {
@@ -15,7 +15,7 @@ function Detail({ a }) {
         <div className='info'>
           <h3 className='name'>{a.title}</h3>
           <p className='price'>{a.price}</p>
-          <p className='gender'>{a.gended}</p>
+          <p className='gender'>남녀공용</p>
           <p className='desc'>{a.desc}</p>
           <Link className='viewmore' to='#viewMore'>
             더보기

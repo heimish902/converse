@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { cartItem } from './index';
 
 function Cart() {
   let state = useSelector((state) => state);

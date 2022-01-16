@@ -2,6 +2,9 @@
 @import '_reset.scss';
 
 /* common */
+.mobile {
+  display: none;
+}
 .inner {
   width: 1440px;
   margin: 0 auto;
@@ -41,7 +44,6 @@ header {
   @include position(fixed, 0, 0);
   width: 100%;
   height: 60px;
-  border-bottom: 1px solid #ddd;
   background-color: #fff;
   z-index: 100;
 
@@ -50,6 +52,9 @@ header {
   }
 }
 
+.mobile_btn {
+  display: none;
+}
 .logo {
   width: 150px;
   height: 60px;
@@ -69,12 +74,17 @@ nav {
 
   .left {
     li {
-      margin-right: 20px;
       font-size: 0.9em;
       font-weight: 600;
     }
     li:last-child a {
       color: red;
+    }
+    span {
+      display: block;
+      height: 60px;
+      padding: 0 10px;
+      line-height: 60px;
     }
   }
   .right {
@@ -96,6 +106,53 @@ nav {
   }
 }
 
+.modal {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .btn {
+    @include position(absolute, 70px, 95%);
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    left: 85%;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+.side_bar {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  background-color: #fff;
+  overflow: hidden;
+
+  ul {
+    width: 70%;
+    margin: 80px 0 0 auto;
+    transition: all 1s;
+  }
+  li {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+    font-weight: 500;
+    line-height: 1.6em;
+  }
+}
+
 /* section */
 section {
   margin-bottom: 50px;
@@ -113,7 +170,8 @@ section {
 
     .text {
       @include position(absolute, 0, 0);
-      padding: 30px;
+      width: 100%;
+      padding: 30px 0 0 30px;
       z-index: 50;
 
       h2 {
@@ -127,6 +185,11 @@ section {
         margin-bottom: 20px;
       }
     }
+    a {
+      position: absolute;
+      top: 300px;
+      left: 30px;
+    }
   }
 
   .right {
@@ -139,21 +202,15 @@ section {
     position: relative;
     height: 450px;
     .text {
-      .top_left {
+      .top {
+        @include flex(row, center, space-between);
         @include position(absolute, 0, 0);
+        width: 100%;
         padding: 30px 20px;
+        font-weight: 600;
         cursor: pointer;
       }
-      .top_right {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 30px 20px;
-        font-size: 0.9em;
-        font-weight: 600;
-        text-align: right;
-        white-space: pre-wrap;
-      }
+
       .bottom {
         position: absolute;
         left: 0;
@@ -250,10 +307,16 @@ section {
 
 /* run start  hike */
 .runStartHike {
+  margin: 0;
   .left {
     .text {
       top: auto;
-      bottom: 0;
+      bottom: 65px;
+    }
+    .btn {
+      position: absolute;
+      bottom: 15px;
+      left: 30px;
     }
   }
 }
@@ -283,5 +346,292 @@ footer {
   .copyright {
     margin-top: 30px;
     padding-left: 5px;
+  }
+}
+
+/* -------------------- Mobile ----------------- */
+@media screen and (max-width: 768px) {
+  /* common */
+  .inner {
+    width: 100vw;
+  }
+  .mobile {
+    display: block;
+  }
+  .row {
+    flex-wrap: wrap;
+  }
+
+  /* header */
+  header {
+    height: 50px;
+
+    .inner {
+      width: 100vw;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 50px;
+    margin-right: 0;
+  }
+
+  nav {
+    @include flex(row, center, space-between);
+    width: 100%;
+
+    .mobile_btn {
+      display: block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+
+      span {
+        line-height: 50px;
+      }
+    }
+
+    .left {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+
+      .top {
+        @include flex(row, center, space-between);
+        height: 50px;
+        border: 1px solid #ddd;
+      }
+
+      .mobile_logo {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        background: url('https://heimish902.github.io/converse/images/mobile_logo.png') no-repeat center / 100%;
+      }
+
+      ul {
+        @include flex(column, flex-start, center);
+        padding: 50px;
+      }
+
+      li {
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+      li:last-child a {
+        color: red;
+      }
+      span {
+        display: block;
+        height: 50px;
+        padding: 0 10px;
+        line-height: 50px;
+      }
+    }
+
+    .right {
+      @include flex(row, center, center);
+
+      li {
+        margin-right: 20px;
+      }
+      li:not(:nth-of-type(2)) {
+        display: none;
+      }
+
+      button {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .modal {
+    top: 50px;
+    width: 100vw;
+    height: calc(100vh - 50px);
+
+    .close {
+      display: none;
+    }
+  }
+  .side_bar {
+    width: 100%;
+
+    ul {
+      margin: 50px auto 0 auto;
+    }
+  }
+
+  /* section */
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  .grid {
+    position: relative;
+    margin-top: 50px;
+
+    .left {
+      position: relative;
+      width: 100%;
+      float: none;
+
+      .text {
+        @include position(absolute, 0, 0);
+        width: 100%;
+        padding: 20px;
+        z-index: 50;
+
+        h2 {
+          font-size: 1.8em;
+        }
+        p {
+          line-height: 1.5em;
+          font-size: 0.7em;
+          margin-bottom: 20px;
+        }
+      }
+      .btn {
+        position: static;
+        width: 80%;
+        margin: 20px auto;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    .right {
+      width: 100%;
+      float: none;
+    }
+    .col-2 {
+      height: 243px;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .text {
+        .top {
+          @include position(absolute, 0, 0);
+          @include flex(row, center, space-between);
+          width: 100%;
+          padding: 10px 15px;
+          cursor: pointer;
+
+          p {
+            font-size: 0.9em;
+            font-weight: 600;
+          }
+        }
+
+        .bottom {
+          padding: 10px 15px;
+
+          p {
+            font-size: 0.7em;
+          }
+          p:first-child {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  /* new Items */
+  .title {
+    padding: 0 15px;
+    margin-bottom: 10px;
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+    a {
+      font-size: 0.8em;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+  .col-4 {
+    position: relative;
+    width: 50%;
+    height: auto;
+    padding-bottom: 30px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bg {
+      display: none;
+    }
+
+    p {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-weight: 400;
+      color: #000;
+    }
+  }
+
+  /* banner */
+  .banner {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+    .btn {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      margin: 20px auto;
+    }
+  }
+
+  /* run start  hike */
+  .runStartHike {
+    margin: 0px;
+    .left {
+      .text {
+        top: auto;
+        bottom: 60px;
+        padding: 10px 15px;
+      }
+    }
+  }
+  /* footer */
+
+  footer {
+    @include flex(row, center, center);
+    padding: 30px 0;
+    .left div,
+    .right div {
+      margin-bottom: 10px;
+    }
+    span,
+    address {
+      display: block;
+      margin-bottom: 5px;
+    }
   }
 }
