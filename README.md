@@ -33,7 +33,10 @@
 - 수량에 따라 변경되는 가격 (total란 포함) 
 - 데이터 내에 재고가 0이 되면 사이즈 선택이 불가능하도록 하는 기능 
 - 새로고침하거나 뒤로가도 계속 남아있는 장바구니 데이터 (localStorage ?)
-- 
+
+2022-01-16 
+- 반응형 미디어쿼리 제작 
+- 메인페이지, 상품 상세페이지 제작 완료 (장바구니 미진행)
 ## Meta
 
 park ji ho – [hemish902@tistory.com](https://heimish902@tistory.com) - frontend_web@kakao.com
