@@ -8,11 +8,29 @@ import { combineReducers, createStore } from 'redux';
 export let cartItem = [];
 
 function reducer(state = cartItem, action) {
+  let copyItem = [...state];
   switch (action.type) {
     case 'AddCart':
-      let copyItem = [...state];
       countItem(copyItem, action);
       console.log(copyItem);
+      return copyItem;
+
+    case 'plusItem':
+      let found = copyItem.findIndex((a) => a.id === action.data);
+      if (found >= 0) {
+        copyItem[found].quan++;
+        const price = document.querySelectorAll('.item')[found];
+        price.querySelector('.price').innerText = `${copyItem[found].price * copyItem[found].quan}원`;
+      }
+      return copyItem;
+
+    case 'minusItem':
+      let founds = copyItem.findIndex((a) => a.id === action.data);
+      if (founds >= 0) {
+        copyItem[founds].quan--;
+        const prices = document.querySelectorAll('.item')[founds];
+        prices.querySelector('.price').innerText = `${copyItem[founds].price * copyItem[founds].quan}원`;
+      }
       return copyItem;
   }
 }

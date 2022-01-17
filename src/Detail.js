@@ -14,7 +14,7 @@ function Detail({ a }) {
       <div className='right'>
         <div className='info'>
           <h3 className='name'>{a.title}</h3>
-          <p className='price'>{a.price}</p>
+          <p className='price'>{a.price.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</p>
           <p className='gender'>남녀공용</p>
           <p className='desc'>{a.desc}</p>
           <Link className='viewmore' to='#viewMore'>
