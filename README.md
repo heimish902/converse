@@ -5,6 +5,14 @@
 <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=HTML5" /> <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=CSS3" /> <img src="https://img.shields.io/badge/-jQuery-0769AD?style=flat&logo=react" />
 
 ## Usage example
+메인페이지
+![1642669255155](https://user-images.githubusercontent.com/93975793/150306992-d139aeac-a3ae-4bc0-835c-d5cec11e8d1b.png)
+
+상세페이지
+![1642669281002](https://user-images.githubusercontent.com/93975793/150307101-54586e47-3f70-4476-bbfd-541e1be8827d.png)
+
+장바구니 페이지
+![1642669315017](https://user-images.githubusercontent.com/93975793/150307126-4736cbe4-35ab-46a6-83de-c275f55519d1.png)
 
 ## Release History
 2022-01-11 
@@ -46,7 +54,6 @@
 
 
 ## Meta
-
 park ji ho – [hemish902@tistory.com](https://heimish902@tistory.com) - frontend_web@kakao.com
 
 [https://github.com/heimish902/github-link](https://github.com/heimish902/)
