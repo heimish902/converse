@@ -31,7 +31,7 @@ function App() {
                 document.querySelector('body').classList.remove('dark');
               }}
             >
-              <span class='hidden'>Converse</span>
+              <span class='hidden'>컨버스</span>
             </Link>
           </h1>
           <nav>
@@ -46,7 +46,12 @@ function App() {
               <span className='material-icons'>menu</span>
             </div>
             <div className='left'>
-              {isSidebar === true ? <MobileSide setIsSideber={setIsSideber} setIsModal={setIsModal} /> : null}
+              {isSidebar === true ? (
+                <MobileSide
+                  setIsSideber={setIsSideber}
+                  setIsModal={setIsModal}
+                />
+              ) : null}
               <ul
                 onClick={(e) => {
                   let span = document.querySelectorAll('.left span');
@@ -105,7 +110,9 @@ function App() {
               </button>
             </div>
           </nav>
-          {isModal === true ? <Modal types={types} setIsModal={setIsModal} /> : null}
+          {isModal === true ? (
+            <Modal types={types} setIsModal={setIsModal} />
+          ) : null}
         </div>
       </header>
       <Switch>
@@ -120,10 +127,14 @@ function App() {
                   <p>
                     새롭게 돌아온 두 패션 아이콘의 콜라보레이션.
                     <br />
-                    하트 앤 아이 로고가 함께 하는 시즈널 컬러 척 70을 만나보세요.
+                    하트 앤 아이 로고가 함께 하는 시즈널 컬러 척 70을
+                    만나보세요.
                   </p>
                 </div>
-                <img src='https://heimish902.github.io/converse/images/asset 25.jpeg' alt='' />
+                <img
+                  src='https://heimish902.github.io/converse/images/asset 25.jpeg'
+                  alt=''
+                />
                 <Link to='/컨버스X꼼데-가르송-플레이-척-70/28' class='btn'>
                   구매하기
                 </Link>
@@ -154,8 +165,14 @@ function App() {
             <section className='banner'>
               <div className='img_box'>
                 <h2 className='hidden'>Run Star Motion Ox</h2>
-                <img src='https://www.converse.co.kr/image/banner/16406673000.jpg' alt='' />
-                <img src='https://www.converse.co.kr/image/banner/16406673420.jpg' alt='' />
+                <img
+                  src='https://www.converse.co.kr/image/banner/16406673000.jpg'
+                  alt=''
+                />
+                <img
+                  src='https://www.converse.co.kr/image/banner/16406673420.jpg'
+                  alt=''
+                />
               </div>
               <Link to='/runstartmotionox' class='btn'>
                 더 알아보기
@@ -166,12 +183,16 @@ function App() {
               <div className='left'>
                 <div className='text'>
                   <p>
-                    자연에서 영감을 받은 색조에 프리미엄 쿠셔닝으로 더욱 편안하면서도,
+                    자연에서 영감을 받은 색조에 프리미엄 쿠셔닝으로 더욱
+                    편안하면서도,
                     <br />
                     절정의 스타일에 도달한 런스타 하이크
                   </p>
                 </div>
-                <img src='https://heimish902.github.io/converse/images/asset 40.jpeg' alt='' />
+                <img
+                  src='https://heimish902.github.io/converse/images/asset 40.jpeg'
+                  alt=''
+                />
                 <button class='btn'>더 알아보기</button>
               </div>
               <div className='right'>
@@ -215,11 +236,17 @@ function App() {
               <Link>통신판매업자 신원정보 확인</Link>
             </div>
             <div>
-              <address>주소 서울특별시 강남구 테헤란로 152(역삼동) 강남파이낸스센터 32층</address>
+              <address>
+                주소 서울특별시 강남구 테헤란로 152(역삼동) 강남파이낸스센터
+                32층
+              </address>
             </div>
             <div>
               <p>
-                고객상담팀 : 080-987-0182<span>(싱담시간 월-금:AM 09:00 - PM 05:30, 주말/공휴일 휴무)</span>
+                고객상담팀 : 080-987-0182
+                <span>
+                  (싱담시간 월-금:AM 09:00 - PM 05:30, 주말/공휴일 휴무)
+                </span>
                 <span>
                   <Link>converskorea@converse.co.kr</Link>
                   (24시간 접수 가능)
@@ -227,7 +254,9 @@ function App() {
               </p>
             </div>
 
-            <div className='copyright'>2020 Converse Korea LLC. All Rights Reserved.</div>
+            <div className='copyright'>
+              2020 Converse Korea LLC. All Rights Reserved.
+            </div>
           </div>
         </div>
       </footer>
